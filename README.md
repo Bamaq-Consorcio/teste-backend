@@ -28,7 +28,7 @@ Faça um fork do repositorio para a sua conta do github, execute as alterações
 
 ### Atenção
 
-Os dados para serem utilizados estão dentro da pasta storage/app/tables, em formato csv.
+Os dados para serem utilizados estão dentro da pasta ./tables(na raiz do projeto), em formato csv.
 
 ### Observação
 
