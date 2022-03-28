@@ -18,8 +18,8 @@ return new class extends Migration
                 $table->id();
                 $table->integer('number');
                 $table->integer('floor');
-                $table->integer('edifice');
-                $table->integer('resident');
+                $table->integer('resident_id');
+                $table->foreignId('edifice_id')->constrained('edifices');
                 $table->timestamps();
             } catch (\Exception $e) {
                 echo ' |** Error ' . $e->getMessage();

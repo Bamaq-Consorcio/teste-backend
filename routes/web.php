@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ApartmentController;
+use App\Models\Apartment;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get(
+    '/apartment',
+    [ApartmentController::class, 'index']
+)->name('index');

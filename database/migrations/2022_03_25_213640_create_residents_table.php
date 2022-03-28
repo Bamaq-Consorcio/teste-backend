@@ -19,8 +19,8 @@ return new class extends Migration
                 $table->string('name');
                 $table->string('email');
                 $table->string('phone');
-                $table->foreignId('vehicle_id')->constrained('vehicles')->onDelete('cascade');
-                $table->foreignId('apartment_id')->constrained('apartments')->onDelete('cascade');
+                $table->foreignId('vehicle_id')->constrained('vehicles');
+                $table->foreignId('apartment_id')->constrained('apartments');
                 $table->timestamps();
             } catch (\Exception $e) {
                 echo ' |** Error ' . $e->getMessage();
