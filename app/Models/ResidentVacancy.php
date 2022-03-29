@@ -52,5 +52,25 @@ class ResidentVacancy extends Model
 
         return $maxLineResidentVacancy;
     }
+
+    public static function getInfoResident($resident_id = null) {
+        $result = DB::table('residents')
+            ->join('apartments', 'residents.apartment_id', '=', 'apartments.id')
+            ->join('vehicles', 'residents.vehicle_id', '=', 'vehicles.id')
+            ->select('residents.id as id_resident','residents.name as resident_name', 'residents.email', 'residents.phone', 
+                    'apartments.id as apartment_id','apartments.*',
+                    'vehicles.id as vehicle_id', 'vehicles.*')
+            ->where('residents.id', $resident_id)
+            ->get()->toArray();
+        
+        $infoResident['data'] = $result[0];
+        $residentVacancy = ResidentVacancy::where('resident_id', $resident_id)->get()->toArray();
+        //var_dump($infoResident); die();
+        $infoResident['resident_vacancies'] = [];
+        foreach($residentVacancy as $vacancy){
+            array_push($infoResident["resident_vacancies"], $vacancy);
+        }
+        return $infoResident;
+    }
     
 }

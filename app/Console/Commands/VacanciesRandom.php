@@ -1,23 +1,57 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Console\Commands;
 
-use App\Models\Apartment;
 use App\Models\Edifice;
 use App\Models\Resident;
 use App\Models\ResidentVacancy;
 use App\Models\Vacancy;
-use Illuminate\Http\Request;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
-class ApartmentController extends Controller
+class VacanciesRandom extends Command
 {
     /**
-     * Display a listing of the resource.
+     * The name and signature of the console command.
      *
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function index()
+    protected $signature = 'vacanciesrandom:random';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Este comando sorteia vagas de um estacionamento';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $count = DB::table('resident_vacancy')->distinct()->groupBy('resident_id')->count('*');
+
+        if ($count >= 7) {
+            try {
+                $deleted = DB::table('resident_vacancy')->delete();
+                echo 'Uma nova semana foi iniciada';
+            } catch (\Exception $e) {
+                echo $e->getMessage();
+            }
+        }
         $edifices = Edifice::all('id')->toArray();
         $edifices_ids = [];
         foreach ($edifices as $key => $edifice_id) {
@@ -38,7 +72,7 @@ class ApartmentController extends Controller
             foreach ($vacancies as $vac) {
                 array_push($vacancyArray, $vac['id']);
             }
-            
+
             $resident_with_vacancies = ResidentVacancy::getResidentWithVacanciesByEdifice($edifice_id);
 
             $occupied_vacancies = [];
@@ -64,7 +98,6 @@ class ApartmentController extends Controller
                 }
             } else {
                 foreach ($residents as $key => $resident) {
-
                     $vacancy = ResidentVacancy::getMaxIdResidentVacanciesByEdifice($edifice_id, $resident->id);
 
                     $number_vacancy = $vacancy[0]->vacancy_id;
@@ -103,73 +136,6 @@ class ApartmentController extends Controller
             }
         }
 
-        var_dump('success!');
-        die();
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        echo 'success!';
     }
 }

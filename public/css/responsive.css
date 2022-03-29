@@ -1,0 +1,106 @@
+@media(max-width: 700px) {
+    html, body {
+        zoom: 73%;
+    }
+    .panel {
+        width: 100vw;
+        width: 568px;
+    }
+    .wrapper {
+        width: 90%;
+        height: 100%;
+    }
+    .view-wrapper {
+        width: 100%;
+        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0);
+    }
+
+    /*responsive view show*/
+    .description {
+        font-size: 25px;
+    }
+    .description input {
+        font-size: 30px;
+    }
+    .description textarea {
+        font-size: 30px;
+        height: 250px;
+    }
+    .description button {
+        font-size: 25px;
+    }
+    .container{
+        
+        margin: 20px;
+
+    }
+    .container select{
+        font-size: 30px;
+    }
+    .description {
+        font-size: 25px;
+    }
+    .description p {
+        font-size: 30px;
+    }
+
+    /*responsive view create e edit*/
+
+    .content-form form input {
+        font-size: 38px;
+    }
+    .content-form form label {
+        font-size: 30px;
+    }
+
+    .content-form form textarea {
+        font-size: 38px;
+        height: 130px;
+        min-height: 300px;
+        max-height: 500px;
+    }
+
+    .content-form form button{
+        font-size: 30px;
+    }
+
+    .card-header {
+        font-size: 30px;
+    }
+    .card-header a{
+        font-size: 30px;
+    }
+
+    /*responsive view index*/
+    .font-size-search .form-group input {
+        font-size: 38px;
+    }
+
+    .font-size-search .form-group label {
+        font-size: 30px;
+    }
+
+    .font-size-search .form-group button {
+        font-size: 30px;
+    }
+    
+    .form-group a {
+        font-size: 30px;
+    }
+
+    .table-responsive {
+        font-size: 22px;
+    }
+    .table-responsive td a{
+        font-size: 22px;
+    }
+
+    .table-responsive td button{
+        font-size: 22px;
+    }
+
+
+}
+
+
+
