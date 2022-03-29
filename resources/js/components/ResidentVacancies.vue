@@ -72,7 +72,6 @@ export default {
   },
   async created() {
     this.residents = JSON.parse(this.residentsdata);
-    console.log(JSON.parse(this.residentsdata));
     var response1 = await axios.get(
       `${window.location.origin}/api/list-rouds/${this.id}`
     );
@@ -82,16 +81,13 @@ export default {
       );
     }
     this.resident = response1.data.resident.data;
-    console.log(response1.data.resident.data);
-    console.log("erro:", this.resident);
   },
   methods: {
     async getResident() {
-      console.log('chegou');
+
       var response = await axios.get(
         `${window.location.origin}/api/list-rouds/${this.id}`
       );
-      console.log(response.success);
       if (response.data.success) {
         this.resident = {};
         this.residentVacancies = [];
@@ -101,7 +97,6 @@ export default {
           );
         }
         this.resident = response.data.resident.data;
-        console.log("erro:", this.resident);
       }
     },
   },

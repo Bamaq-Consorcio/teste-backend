@@ -22621,11 +22621,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           switch (_context.prev = _context.next) {
             case 0:
               _this.residents = JSON.parse(_this.residentsdata);
-              console.log(JSON.parse(_this.residentsdata));
-              _context.next = 4;
+              _context.next = 3;
               return axios__WEBPACK_IMPORTED_MODULE_1___default().get("".concat(window.location.origin, "/api/list-rouds/").concat(_this.id));
 
-            case 4:
+            case 3:
               response1 = _context.sent;
 
               for (prop in response1.data.resident.resident_vacancies) {
@@ -22633,10 +22632,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               }
 
               _this.resident = response1.data.resident.data;
-              console.log(response1.data.resident.data);
-              console.log("erro:", _this.resident);
 
-            case 9:
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -22654,13 +22651,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                console.log('chegou');
-                _context2.next = 3;
+                _context2.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().get("".concat(window.location.origin, "/api/list-rouds/").concat(_this2.id));
 
-              case 3:
+              case 2:
                 response = _context2.sent;
-                console.log(response.success);
 
                 if (response.data.success) {
                   _this2.resident = {};
@@ -22671,10 +22666,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }
 
                   _this2.resident = response.data.resident.data;
-                  console.log("erro:", _this2.resident);
                 }
 
-              case 6:
+              case 4:
               case "end":
                 return _context2.stop();
             }
