@@ -31,7 +31,7 @@ sail up
 
 6 - Execute o comando ``` sail yarn install ``` para rodar as dependências do package.json do projeto.
 
-7 - Execute o comando ``` sail php artisan migreate ``` para rodar as migrations.
+7 - Execute o comando ``` sail php artisan migrete ``` para rodar as migrations.
 
 8 - Execute o comando ``` sail php artisan db:seed ``` para rodar as inserções no DB.
 
