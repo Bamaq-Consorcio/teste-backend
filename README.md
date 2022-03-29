@@ -4,7 +4,7 @@ Antes de começar essa etapa, garanta que os seguintes pré requisitos estão cu
 
 1 - Com o git instalado e o terminal aberto, execute o comando abaixo, para clonar o repositório: 
 ``` 
-git clone 
+git clone https://github.com/Wallacewss2033/teste-backend.git
 ```
 
 2 - Instale as libs do composer com 
