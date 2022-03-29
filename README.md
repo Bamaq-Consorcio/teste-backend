@@ -33,6 +33,6 @@ sail up
 
 7 - Execute o comando ``` sail php artisan migreate ``` para rodar as migrations.
 
-8 - Execute o comando ```` sail php artisan db:seed ``` para rodar as inserções no DB.
+8 - Execute o comando ``` sail php artisan db:seed ``` para rodar as inserções no DB.
 
 9 - Para fazer uma rodada e mudar as vagas no ambiente local, execute o commando ``` php artisan VacanciesRandom:random ```
