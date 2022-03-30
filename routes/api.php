@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/list-rouds/{id}', [ApiController::class, 'listRouds'])->name('listrouds.index');
+Route::get('/list-rounds/{id}', [ApiController::class, 'listRounds'])->name('listrounds.index');

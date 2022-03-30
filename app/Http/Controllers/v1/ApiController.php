@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    public function listRouds($id) {
+    public function listRounds($id) {
         try {
             $residentVacancy = ResidentVacancy::getInfoResident($id);
 

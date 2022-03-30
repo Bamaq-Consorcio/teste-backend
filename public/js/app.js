@@ -22622,7 +22622,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 0:
               _this.residents = JSON.parse(_this.residentsdata);
               _context.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default().get("".concat(window.location.origin, "/api/list-rouds/").concat(_this.id));
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().get("".concat(window.location.origin, "/api/list-rounds/").concat(_this.id));
 
             case 3:
               response1 = _context.sent;
@@ -22652,7 +22652,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get("".concat(window.location.origin, "/api/list-rouds/").concat(_this2.id));
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get("".concat(window.location.origin, "/api/list-rounds/").concat(_this2.id));
 
               case 2:
                 response = _context2.sent;

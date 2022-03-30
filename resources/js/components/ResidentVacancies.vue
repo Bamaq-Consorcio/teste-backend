@@ -73,7 +73,7 @@ export default {
   async created() {
     this.residents = JSON.parse(this.residentsdata);
     var response1 = await axios.get(
-      `${window.location.origin}/api/list-rouds/${this.id}`
+      `${window.location.origin}/api/list-rounds/${this.id}`
     );
     for (let prop in response1.data.resident.resident_vacancies) {
       this.residentVacancies.push(
@@ -86,7 +86,7 @@ export default {
     async getResident() {
 
       var response = await axios.get(
-        `${window.location.origin}/api/list-rouds/${this.id}`
+        `${window.location.origin}/api/list-rounds/${this.id}`
       );
       if (response.data.success) {
         this.resident = {};
