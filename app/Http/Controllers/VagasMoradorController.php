@@ -62,17 +62,17 @@ class VagasMoradorController extends Controller
 
             if($verificaVagaAnterior)
             {
-                $verificaVagaAnterior->situacao = 2;
+                $verificaVagaAnterior->situacao_id = 2;
                 $verificaVagaAnterior->update();
 
                 $vagaAnterior = Vagas::find($verificaVagaAnterior->id_vaga);
-                $vagaAnterior->situacao = 1;
+                $vagaAnterior->situacao_id = 1;
                 $vagaAnterior->update();
             }
 
             $vagasDisponiveis = Vagas::where("bloco", $apartamento->bloco)
                                         ->where("situacao_id", 1)
-                                        ->whereNotIn("id_vaga", $historicoVagasId)
+                                        ->whereNotIn("id", $historicoVagasId)
                                         ->pluck('id')->toArray();
     
             $keyVaga = array_rand($vagasDisponiveis);

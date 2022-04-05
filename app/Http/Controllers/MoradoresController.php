@@ -43,11 +43,18 @@ class MoradoresController extends Controller
                     "ano"   => $veiculo->ano,
                 ];
 
-                $vagas = $veiculo->vagasMorador()->get();
+                $vagasMorador = $veiculo->vagasMorador()->get();
                 $returnResponse[$index]['veiculos'][$indexVeiculo]['vagas'] = [];
     
-                foreach ($vagas as $vaga) {
-                    dd("ok");
+                foreach ($vagasMorador as $vagaMorador) {
+                    $dadosVaga = $vagaMorador->vaga;
+                    
+                    $returnResponse[$index]['veiculos'][$indexVeiculo]['vagas'][] = [
+                        "numero"    => $dadosVaga->numero,
+                        "bloco"     => $dadosVaga->bloco,
+                        "situacao"  => $dadosVaga->situacao->descricao,
+                        "data"  => $dadosVaga->created_at->format('Y-m-d H:i:s')
+                    ];
                 }
             }
 
