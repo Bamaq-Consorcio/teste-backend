@@ -1,6 +1,7 @@
 # Desafio Desenvolvedor BAMAQ
 
-Um grupo de pessoas de um condominio, decidiu criar um sistema web para controlar a utilização das vagas rotativas que estão localizadas em pontos estrategicos do condominio. O objetivo é que o sistema faça um sorteio e escolha de forma randomica a vaga designada para cada morador. Fazendo com que todos utilizem todas as vagas. É importante que um morador não repita a vaga em um intervalo menor que 7 dias
+### Contexto geral
+Os moradores de um condominio, decidiram pela criação de um sistema web para controlar a utilização das vagas rotativas que estão localizadas em pontos estrategicos do condominio. O objetivo é que o sistema faça um sorteio e escolha de forma randomica a vaga designada para cada morador. Fazendo com que todos utilizem todas as vagas. É importante que um morador não repita a vaga em um intervalo menor que 7 dias
 
 ### Instruções
 
