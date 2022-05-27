@@ -468,7 +468,7 @@
     </style>
 </head>
 <br>
-
+<!--Inicio da interface-->
 <body>
     <div class="table-responsive">
         <h3 class="title">Mapa de vagas</h3>
@@ -525,6 +525,8 @@
         </table>
     </div>
     <br><br>
+
+    <!--Realização do sorteio está localizada nessa parte-->
     <div class="table-responsive-2">
         <h3>Vaga sorteada</h3>
         <h2 id="resultado" class="result"></h2>
