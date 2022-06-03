@@ -1,0 +1,38 @@
+.container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 80px 80px;
+    border-radius: 15px;
+    background-color: rgb(248, 242, 234);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.header {
+    margin: 20px;
+    padding-top: 10px;
+}
+
+.btn-sortear {
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 20px 40px;
+    cursor: pointer;
+}
+
+.blocos {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bloco {
+    background-color: rgb(247, 233, 214);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin: 40px;
+    padding: 30px;
+}

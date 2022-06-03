@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Exceptions\CSV;
+use App\Http\Controllers\Home;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [Home::class, 'index']);
+
+
+Route::get('/apartamentos', function () {
+    $dados = CSV::readCSV('./../tables/apartamentos.csv', true, ',');
+    echo '<pre>';
+    print_r($dados);
+    echo '</pre>';
 });
+
+Route::get('/moradores', function () {
+    $dados = CSV::readCSV('./../tables/moradores.csv', true, ',');
+    echo '<pre>';
+    print_r($dados);
+    echo '</pre>';
+});
+
+Route::get('/veiculos', function () {
+    $dados = CSV::readCSV('./../tables/veiculos.csv', true, ',');
+    echo '<pre>';
+    print_r($dados);
+    echo '</pre>';
+});
+
